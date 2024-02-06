@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">Element</div>
+    <button onclick="getDimensions()">Получить размеры</button>
+
+    <script>
+        function getDimensions() {
+            let elem = document.getElementById('elem');
+            let computedStyle = getComputedStyle(elem);
+            let width = elem.offsetWidth - parseInt(computedStyle.borderLeftWidth) - parseInt(computedStyle.borderRightWidth);
+            let height = elem.offsetHeight - parseInt(computedStyle.borderTopWidth) - parseInt(computedStyle.borderBottomWidth);
+            alert('Ширина без границы и padding: ' + width + 'px, Высота без границы и padding: ' + height + 'px');
+        }
+    </script>
+</body>
+</html>

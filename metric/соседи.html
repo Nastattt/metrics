@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Задача 1 -->
+    <div id="elem">Element</div>
+    <div id="sibling1">Sibling 1</div>
+
+    <script>
+        // Задача 1
+        let elem = document.getElementById('elem');
+        let siblingAbove = elem.previousElementSibling;
+        siblingAbove.textContent += '!';
+
+        // Задача 2
+        let siblingBelow = elem.nextElementSibling;
+        siblingBelow.textContent += '!';
+
+        // Задача 3
+        let siblingNextBelow = siblingBelow.nextElementSibling;
+        siblingNextBelow.textContent += '!';
+    </script>
+</body>
+</html>

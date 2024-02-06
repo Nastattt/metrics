@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">Element</div>
+    <button onclick="showFullWidth()">Полная ширина</button>
+    <button onclick="showFullHeight()">Полная высота</button>
+
+    <script>
+        function showFullWidth() {
+            let elem = document.getElementById('elem');
+            let fullWidth = elem.offsetWidth;
+            alert('Полная ширина: ' + fullWidth + 'px');
+        }
+
+        function showFullHeight() {
+            let elem = document.getElementById('elem');
+            let fullHeight = elem.offsetHeight;
+            alert('Полная высота: ' + fullHeight + 'px');
+        }
+    </script>
+</body>
+</html>

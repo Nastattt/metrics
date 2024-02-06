@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">Element</div>
+    <button onclick="showContentWidth()">Ширина без границы</button>
+    <button onclick="showContentHeight()">Высота без границы</button>
+
+    <script>
+        function showContentWidth() {
+            let elem = document.getElementById('elem');
+            let contentWidth = elem.clientWidth;
+            alert('Ширина без границы: ' + contentWidth + 'px');
+        }
+
+        function showContentHeight() {
+            let elem = document.getElementById('elem');
+            let contentHeight = elem.clientHeight;
+            alert('Высота без границы: ' + contentHeight + 'px');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #elem {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">Element</div>
+    <button onclick="showBorderTopWidth()">Толщина верхней границы</button>
+    <button onclick="showBorderLeftWidth()">Толщина левой границы</button>
+
+    <script>
+        function showBorderTopWidth() {
+            let elem = document.getElementById('elem');
+            let borderTopWidth = elem.clientTop;
+            alert('Толщина верхней границы: ' + borderTopWidth + 'px');
+        }
+
+        function showBorderLeftWidth() {
+            let elem = document.getElementById('elem');
+            let borderLeftWidth = elem.clientLeft;
+            alert('Толщина левой границы: ' + borderLeftWidth + 'px');
+        }
+    </script>
+</body>
+</html>

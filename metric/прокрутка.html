@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #elem {
+            width: 200px;
+            height: 100px;
+            overflow-y: scroll;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem" onscroll="showScrollTop()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ex!</div>
+    <button onclick="showScrollTop()">Показать scrollTop</button>
+    <button onclick="scrollToPosition()">Прокрутить до 100px сверху</button>
+    <button onclick="scrollDown()">Прокрутить на 100px вниз</button>
+
+    <script>
+        function showScrollTop() {
+            let elem = document.getElementById('elem');
+            alert('Прокручено сверху: ' + elem.scrollTop + 'px');
+        }
+
+        function scrollToPosition() {
+            let elem = document.getElementById('elem');
+            elem.scrollTop = 100;
+        }
+
+        function scrollDown() {
+            let elem = document.getElementById('elem');
+            elem.scrollTop += 100;
+        }
+    </script>
+</body>
+</html>

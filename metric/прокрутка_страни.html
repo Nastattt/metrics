@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Tasks</title>
+    <style>
+        #elem1 {
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        
+        #elem2 {
+            width: 200px;
+            overflow-x: scroll;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem1" onscroll="showScrollHeight()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ex!</div>
+    <button onclick="showScrollHeight()">Показать реальную высоту</button>
+
+    <div id="elem2" onscroll="showScrollWidth()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ex!</div>
+    <button onclick="showScrollWidth()">Показать реальную ширину</button>
+
+    <div id="elem3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ex!</div>
+    <button onclick="scrollToBottom()">Прокрутить до 100px от нижнего края</button>
+
+    <button onclick="showVerticalScroll()">Показать прокрутку по вертикали</button>
+    <button onclick="showHorizontalScroll()">Показать прокрутку по горизонтали</button>
+
+    <script>
+        function showScrollHeight() {
+            let elem = document.getElementById('elem1');
+            alert('Реальная высота с учетом прокрутки: ' + elem.scrollHeight + 'px');
+        }
+
+        function showScrollWidth() {
+            let elem = document.getElementById('elem2');
+            alert('Реальная ширина с учетом прокрутки: ' + elem.scrollWidth + 'px');
+        }
+
+        function scrollToBottom() {
+            let elem = document.getElementById('elem3');
+            elem.scrollTop = elem.scrollHeight - elem.clientHeight - 100;
+        }
+
+        function showVerticalScroll() {
+            alert('Прокручено по вертикали: ' + window.pageYOffset + 'px');
+        }
+
+        function showHorizontalScroll() {
+            alert('Прокручено по горизонтали: ' + window.pageXOffset + 'px');
+        }
+    </script>
+</body>
+</html>

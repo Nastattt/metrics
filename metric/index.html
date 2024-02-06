@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="example">
+        <div id="elem">
+            <div class="elem1">
+                <p class="www">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo minus accusamus officia nihil similique, hic tempora suscipit sed perspiciatis consequuntur reprehenderit expedita inventore quidem minima at vitae quo ducimus esse?</p>
+            <ol>fjvrec</ol>
+            <ul>bhjnkml,</ul>
+            </div>
+        </div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Quos rem, alias nobis ab eius animi ullam mollitia laborum consequuntur sunt facilis,
+        labore natus quasi impedit fugit maiores molestias nulla ipsum?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Quos rem, alias nobis ab eius animi ullam mollitia laborum consequuntur sunt facilis,
+        labore natus quasi impedit fugit maiores molestias nulla ipsum?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Quos rem, alias nobis ab eius animi ullam mollitia laborum consequuntur sunt facilis,
+        labore natus quasi impedit fugit maiores molestias nulla ipsum?
+    </div>
+    <!-- удаление и клонирование -->
+    <body>
+        <!-- Задача 1 -->
+        <div id="parent">
+            <div id="child">Child element</div>
+        </div>
+        <button onclick="removeChildElement()">Remove Child</button>
+    
+        <!-- Задача 2 -->
+        <ol id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+        <button onclick="removeLastChild()">Remove Last Item</button>
+    
+        <!-- Задача 3 -->
+        <div id="removeMe" onclick="removeMe()">Click to Remove Me</div>
+    
+        <!-- Задача 4 -->
+        <ol id="list2">
+            <li onclick="removeListItem(this)">Item 1</li>
+            <li onclick="removeListItem(this)">Item 2</li>
+            <li onclick="removeListItem(this)">Item 3</li>
+        </ol>
+    
+        <!-- Задача 5 -->
+        <input type="text" id="input">
+        <button onclick="cloneInput()">Clone Input</button>
+    
+        <script>
+            // Задача 1
+            function removeChildElement() {
+                let parent = document.getElementById('parent');
+                let child = document.getElementById('child');
+                parent.removeChild(child);
+            }
+    
+            // Задача 2
+            function removeLastChild() {
+                let list = document.getElementById('list');
+                let lastChild = list.lastElementChild;
+                list.removeChild(lastChild);
+            }
+    
+            // Задача 3
+            function removeMe() {
+                let element = document.getElementById('removeMe');
+                element.parentNode.removeChild(element);
+            }
+    
+            // Задача 4
+            function removeListItem(item) {
+                let list = document.getElementById('list2');
+                list.removeChild(item);
+            }
+    
+            // Задача 5
+            function cloneInput() {
+                let input = document.getElementById('input');
+                let clonedInput = input.cloneNode(true);
+                input.parentNode.appendChild(clonedInput);
+            }
+        </script>
+    </body>

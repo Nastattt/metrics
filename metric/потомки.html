@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Задача 1 -->
+    <div id="elem">
+        <span>First child</span>
+        <span>Second child</span>
+        <span>Third child</span>
+    </div>
+
+    <script>
+        // Задача 1
+        let firstChild = document.getElementById('elem').firstElementChild;
+        firstChild.style.color = 'red';
+
+        // Задача 2
+        let lastChild = document.getElementById('elem').lastElementChild;
+        lastChild.style.color = 'red';
+
+        // Задача 3
+        let allChildren = document.getElementById('elem').children;
+        for (let child of allChildren) {
+            child.textContent += '!';
+        }
+    </script>
+</body>
+</html>
